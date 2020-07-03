@@ -1,0 +1,112 @@
+{% include 'base.html' %}
+
+{% block title %}  {% endblock %}
+{% block content %}
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
+<link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='style.css') }}">
+<script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.6/d3.min.js"></script>
+<h3 class="table-heading">This page is dedicated to analysing the COVID 19 data. Analysis done in May</h3> 
+<div class="page">
+    <p class="text1"> Coronavirus disease 2019 (COVID-19) is an infectious disease caused by severe acute respiratory syndrome coronavirus 2 (SARS-CoV-2).[9] It was first identified in December 2019 in Wuhan, Hubei, China, and has resulted in an ongoing pandemic.
+        The virus is primarily spread between people during close contact, most often via small droplets produced by coughing, sneezing, and talking.There are no vaccines nor specific antiviral treatments for COVID-19.</p>
+    <p class="text1">  The aim of this study is to provide the transmission trend from China to other countries and to report the daily confirmed cases, fatality causes, and surveillance in every country from the first day of the outbreak until May and, also, to evaluate the effect of each government policy in controlling the outbreak of COVID‐19.</p>
+    
+    <p class="text1">Without data we can not understand the pandemic. Only based on data can we know how the disease is spreading, what impact the pandemic has on the lives of people around the world, and whether the counter measures countries are taking are successful or not.
+        But even the best available data on the coronavirus pandemic is far from perfect.</p>
+    <h2 class="table-heading"><u>Real-time updates on Corona Cases</u></h2>
+    <div class="table-data">
+        {{returnList | safe}};
+    </div>
+
+    <h2 class="table-heading"><u>INDIA- State-wise tally of Total Cases</u></h2>
+    <div class="plots">
+        {{figure1 | safe}}
+        
+    </div>
+    <h2 class="table-heading"><u>INDIA- State-wise tally of Total Deaths</u></h2>
+    <div class="plots">
+        {{figure2| safe}}
+    </div>
+    <p class="text">Maharashtra is bearing the brunt of India’s COVID-19 crisis, with highest number of cases and deaths.
+        No state has reported even half the number of cases that Maharashtra has, shows data.
+        As of April 30, Maharashtra accounts for 30 per cent of the total cases in India and 40 per cent deaths.
+        Maharashtra is the second-most populous state on top of that it has the financial capital of India, Mumbai , which see more international flights than any other city in India.Over 42,000 international travellers land in Mumbai every day. Mumbai waited for more than a week to begin thermal screening. Asymptomatic Covid-19 carriers were anyway entering into the crowds in Mumbai and Maharashtra but symptomatic ones could have been checked but for evidently late realisation by the authorities. Another reason is cited for Maharashtra's seemingly inept handling of Covid-19 spread over the past two months
+
+            
+    </p>
+
+    <h2 class="table-heading"><u>INDIA- State-wise tally of Cured Cases</u></h2>
+    <div class="plots">
+        {{figure3 | safe}}
+    </div>
+    <p class="text"> However, on the positive side, if something can be considered positive in this pandemic the recovery rate in India has been a bright spark. Some states have done really well in limiting the spread and some have done well to cure the patients in their health facilities.
+        Rajasthan, Tamil Nadu, Madhya Pradesh, Gujarat and Bihar had set an example for the country and had taken several measures. various steps taken by the government with the help of sanitation workers, local bodies and district officials, including the creation of additional healthcare facilities. Other states can learn from these and implement the solution to control the situation.
+    </p>
+    
+    <h2 class="table-heading"><u>INDIA- State-wise tally of Active Cases</u></h2>
+    <div class="plots">
+        {{figure4 | safe}}
+    </div>
+    <p class="text">By removing deaths and recoveries from total cases, we get "currently infected cases" or "active cases". If the number of people recovering on any given day is more than new cases being detected, it would mean that more people are coming out of the hospital than going in. If this trend holds for more than two weeks, then it can be an indication of the disease having ‘peaked’ and a decline having started.In India, that stage is yet to be reached.
+        As and when recoveries do begin to exceed new cases, the trend would become evident in some states before getting visible at the national level
+    </p>
+     
+    <h2 class="table-heading"><u>Datewise confirmed cases</u></h2>
+    <div class="plots">
+        {{figure5 | safe}}
+    </div>
+    <p class="text">On 30 January, the first case was confirmed in Kerala's Thrissur district in a student who had returned home for a vacation from Wuhan University in China.
+        On 2 February, the second case was reported in Kerala's Alappuzha district in a student who had returned from Wuhan, China.
+        On 3 February, the third case was reported in Kerala's Kasaragod district in a student who had returned from Wuhan, China.
+        The cases started increasing in other states as well having  sometravel history </p>
+
+
+    <h2 class="table-heading"><u>India-Date Wise data</u></h2>
+    <div class="plots">
+        {{dateWiseData | safe}}
+    </div>
+    <p class="text">As of 5 April 2020, according to MoHFW, a total of 3577 COVID19 cases, (including 65 foreign nationals) have been reported in 29
+        states/union territories. The World Health Organization along with other global health authorities have repeatedly underlined the importance of “flattening the curve” to handle the novel coronavirus pandemic. What does it mean? Simply put, the idea is to reduce the number of new cases over a long period to allow people to have better access to healthcare and recovery without infecting others. If the current trend continues, the Indian health system would be overwhelmed leading to more deaths than recoveries</p>
+
+    
+    
+    <h2 class="table-heading"><u>Daily confirmed deaths</u></h2>
+    <div class="plots">
+        {{dailyConfirmedDeath | safe}}
+    </div>
+    <p class="text">For all global data sources on the pandemic, daily data does not necessarily refer to deaths on that day – but to the deaths reported on that day.
+
+        Since reporting can vary very significantly from day to day – irrespectively of any actual variation of deaths – it is helpful to look at changes from week to week. This provides a slightly clearer picture of where the pandemic is accelerating, slowing, or in fact reducing.</p>
+
+    <h2 class="table-heading"><u>country wise tests</u></h2>
+    <div class="plots">
+        {{countryWiseTests | safe}}
+    </div>
+    <p class="text">No country knows the total number of people infected with COVID-19. All we know is the infection status of those who have been tested. All those who have a lab-confirmed infection are counted as confirmed cases.
+
+        This means that the counts of confirmed cases depend on how much a country actually tests. Without testing there is no data.
+        
+        Testing is our window onto the pandemic and how it is spreading. Without data on who is infected by the virus we have no way of understanding the pandemic. Without this data we can not know which countries are doing well, and which are just underreporting cases and deaths.
+        
+        To interpret any data on confirmed cases we need to know how much testing for COVID-19 the country actually does.The number of tests does not refer to the same in each country – one difference is that some countries report the number of people tested, while others report the number of tests (which can be higher if the same person is tested more than once). And other countries report their testing data in a way that leaves it unclear what the test count refers to exactly.</p>
+
+
+
+
+
+        <p class="text"> Since there is no vaccine available right now, the only way to handle the spread is to slow down the transmission. As it can be seen even in the under-estimates and from the actual data around us, the sharply increasing number of cases is bound to overwhelm the medical infrastructure of any nation. So, by slowing down the transmission, we don’t actually stop the spread but keep the transmission and the active cases at any point in time well within the limits of the medical handling capacity</p>
+
+
+
+
+
+
+
+
+</div>
+{% endblock %}
+
+{% block body %}
+    
+{% endblock %}
