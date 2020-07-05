@@ -21,7 +21,7 @@ from plotly.subplots import make_subplots
 
 app=Flask(__name__)
 
-@app.route("/covid19-analysis-project")
+@app.route("/")
 def show_tables():
     tableDisplay = table()
     figureDisplay1 = plot1()
