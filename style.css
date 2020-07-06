@@ -1,0 +1,19 @@
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #ECECEC;
+  }
+  .content{
+    margin-top: 30px;
+    margin-bottom: 30px;
+    padding: 20px 20px 20px 20px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    background-color: rgb(91, 202, 247);
+    width:50%;
+    margin-left: 350px;
+  }
+.first{
+    color: blue;
+}
+.second{
+    color: green;
+}
